@@ -8,7 +8,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 			<form className="bg-green-200 flex flex-col">
 				{/* Section for textinput and corresponding label */}
 				<section className="flex flex-col items-center p-4">
-					<label>Create a new habit </label>
+					<label htmlFor="habit">Create a new habit </label>
 					<input
 						type="text"
 						id="habit"
@@ -22,8 +22,10 @@ export const HabitForm = ({ setHabits, habits }) => {
 					<input
 						type="int"
 						className="border-2 bg-lime-300 rounded-2xl w-[20%] h-[50%]"
+						name="times"
+						id="times"
 					/>
-					<span>times per</span>
+					<label htmlFor="times">times per</label>
 					{/* Div for button Divs */}
 					<div>
 						<div>
