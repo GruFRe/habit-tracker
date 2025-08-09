@@ -1,10 +1,13 @@
 import "./App.css";
+import { HabitForm } from "./components/HabitForm";
+import { Header } from "./components/Header";
 
 function App() {
 	return (
-		<>
-			<h1 className="bg-amber-600">Hello</h1>
-		</>
+		<div className="size-100%">
+			<Header />
+			<HabitForm />
+		</div>
 	);
 }
 
