@@ -1,4 +1,4 @@
-# React + Vite
+# Habit Tracker
 
 First project during WBS Coding School utilizing React, State and Effect.
 
