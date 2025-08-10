@@ -2,6 +2,9 @@ import { useState } from "react";
 
 // Component to create new Habits
 export const HabitForm = ({ setHabits, habits }) => {
+	// use object as blueprint to pass in state and to reset after submit
+	const habitBlueprint = "";
+	// pass in blueprint wich serves as initial value
 	const [newHabit, setNewHabit] = useState({
 		id: 0,
 		habitText: "",
@@ -23,7 +26,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 	const submitForm = (e) => {
 		// prevent default behaviour wich reload page after submitting
 		e.preventDefault();
-		// calculate and assign new id/key at this point
+		// calculate and assign new id/key at this point before creating new habitList
 		const newID = habits.length + 1;
 		setNewHabit({
 			...newHabit,
@@ -32,8 +35,11 @@ export const HabitForm = ({ setHabits, habits }) => {
 		// console.log("Length: ", newHabit);
 		// add current habbit to habitList for easy assinging in the next step
 		const retHabits = [newHabit, ...habits];
-		// call the setHabits Function and add current habitList to it
 		setHabits(retHabits);
+		// reset newHabit to clear out/ reset inputs
+
+		// const reset = habitBlueprint;
+		// setNewHabit(reset);
 	};
 	console.log(newHabit.habitText, newHabit.times);
 	return (

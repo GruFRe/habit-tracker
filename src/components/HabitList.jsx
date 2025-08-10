@@ -5,6 +5,7 @@ export const HabilList = ({ habits }) => {
 	return (
 		<div className="flex flex-col items-center bg-green-800">
 			{habits.map((habit) => {
+				console.log(habit.id);
 				// make sure to use return inside of map and to update names if changes occur
 				return (
 					<HabitListItem
