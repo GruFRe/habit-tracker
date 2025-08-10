@@ -11,6 +11,7 @@ export const HabilList = ({ habits }) => {
 						text={habit.text}
 						count={habit.count}
 						time={habit.time}
+						status={habit.status}
 					/>
 				);
 			})}

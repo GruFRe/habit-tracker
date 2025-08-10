@@ -14,14 +14,14 @@ export const HabitForm = ({ setHabits, habits }) => {
 						id="habit"
 						name="habit"
 						required
-						className="border-2 bg-lime-300 rounded-2xl w-fit max-w-md m-4"
+						className="border-2 bg-lime-300 rounded-2xl w-fit max-w-md m-4 px-4"
 					/>
 				</section>
 				{/* Section to select timeframe and repetitions */}
-				<section className="border-2 flex flex-row justify-evenly mx-2 mb-4 p-2">
+				<section className="flex flex-row justify-evenly mx-2 mb-4">
 					<input
 						type="int"
-						className="border-2 bg-lime-300 rounded-2xl w-[20%] h-[50%]"
+						className="border-2 bg-lime-300 rounded-2xl w-[20%] h-[50%] text-center"
 						name="times"
 						id="times"
 					/>
@@ -29,7 +29,12 @@ export const HabitForm = ({ setHabits, habits }) => {
 					{/* Div for button Divs */}
 					<div>
 						<div>
-							<input type="radio" name="day" id="day" />
+							<input
+								type="radio"
+								name="day"
+								id="day"
+								defaultChecked
+							/>
 							<label htmlFor="day">Day</label>
 						</div>
 						<div>
@@ -39,11 +44,15 @@ export const HabitForm = ({ setHabits, habits }) => {
 					</div>
 				</section>
 				{/* Submit Button, onClick should create a new Habit */}
+				<input type="submit" value="Test" />
 				<button
 					className="border-2 rounded-2xl mb-4 mx-4"
-					onClick={() => {
+					onSubmit={() => {
 						// To Do
-						setHabits([{}, ...habits]);
+						setHabits([
+							{ id: habits.legnth + 1, text: "Test" },
+							...habits,
+						]);
 					}}
 				>
 					Submit
