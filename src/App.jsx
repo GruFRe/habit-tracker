@@ -7,8 +7,14 @@ import { HabilList } from "./components/HabitList";
 function App() {
 	// useState for Array wich contains different habits, each is an object
 	const [habits, setHabits] = useState([
-		{ id: 1, text: "drink", count: 7, time: "day", status: 0 },
-		{ id: 2, text: "ride bike", count: 4, time: "week", status: 0 },
+		{ id: 1, habitText: "drink", times: 7, timeframe: "day", status: 0 },
+		{
+			id: 2,
+			habitText: "ride bike",
+			times: 4,
+			timeframe: "week",
+			status: 0,
+		},
 	]);
 
 	useState(() => {}, [habits]);

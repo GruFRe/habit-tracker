@@ -8,9 +8,9 @@ export const HabilList = ({ habits }) => {
 				return (
 					<HabitListItem
 						key={habit.id}
-						text={habit.text}
-						count={habit.count}
-						time={habit.time}
+						text={habit.habitText}
+						times={habit.times}
+						timeframe={habit.timeframe}
 						status={habit.status}
 					/>
 				);
