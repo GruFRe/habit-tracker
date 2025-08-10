@@ -6,7 +6,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 		id: 0,
 		habitText: "",
 		times: 0,
-		timeframe: "Day",
+		timeframe: "week",
 		status: 0,
 	});
 	// Function wich gets called onChange
@@ -29,7 +29,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 			...newHabit,
 			id: newID,
 		});
-		console.log("Length: ", newHabit);
+		// console.log("Length: ", newHabit);
 		// add current habbit to habitList for easy assinging in the next step
 		const retHabits = [newHabit, ...habits];
 		// call the setHabits Function and add current habitList to it
@@ -71,19 +71,28 @@ export const HabitForm = ({ setHabits, habits }) => {
 						className="border-2 bg-lime-300 rounded-2xl w-[20%] h-[50%] text-center"
 					/>
 					<label htmlFor="times">times per</label>
-					{/* Div for groups of buttons and Labels */}
+					{/* Div for groups of buttons and Labels use same name for both buttons to ensure only one can be selected*/}
 					<div>
 						<div>
 							<input
 								type="radio"
-								name="day"
+								name="timeframe"
 								id="day"
-								defaultChecked
+								value="day"
+								checked={newHabit.timeframe === "day"}
+								onChange={handleOnChange}
 							/>
 							<label htmlFor="day">Day</label>
 						</div>
 						<div>
-							<input type="radio" name="week" id="week" />
+							<input
+								type="radio"
+								name="timeframe"
+								id="week"
+								value="week"
+								checked={newHabit.timeframe === "week"}
+								onChange={handleOnChange}
+							/>
 							<label htmlFor="week">Week</label>
 						</div>
 					</div>
