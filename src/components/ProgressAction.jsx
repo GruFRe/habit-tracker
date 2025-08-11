@@ -3,15 +3,9 @@
 // need
 // times, status, setter function in here
 // pass in whole habit Object in parent component for easier access
-export const ProgressAction = ({ value, times, status }) => {
+export const ProgressAction = ({ value, habit, setHabits }) => {
 	const changeCounter = (e) => {
-		if (e.target.value === "-") {
-		} else if (e.target.value === "+") {
-		}
-
-		// if (status < times) {
-		// 	status++;
-		// }
+		// add logic to count
 	};
 
 	return (

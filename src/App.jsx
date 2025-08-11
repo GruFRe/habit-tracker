@@ -23,7 +23,7 @@ function App() {
 		<div className="size-100%">
 			<Header />
 			<HabitForm setHabits={setHabits} habits={habits} />
-			<HabilList habits={habits} />
+			<HabilList habits={habits} setHabits={setHabits} />
 		</div>
 	);
 }
