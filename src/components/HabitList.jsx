@@ -1,7 +1,7 @@
 import { HabitListItem } from "./HabitListItem";
 
-// Component wich lists all created Habits
-export const HabilList = ({ habits, setHabits }) => {
+// Component wich lists all created Habits, empty array as default value to prevent a crash
+export const HabilList = ({ habits = [], setHabits }) => {
 	return (
 		<div className="flex flex-col items-center bg-green-800">
 			{habits.map((habit) => {
