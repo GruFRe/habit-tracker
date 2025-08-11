@@ -2,9 +2,6 @@ import { HabitListItem } from "./HabitListItem";
 
 // Component wich lists all created Habits
 export const HabilList = ({ habits, setHabits }) => {
-	habits.forEach((element) => {
-		console.log(element.id);
-	});
 	return (
 		<div className="flex flex-col items-center bg-green-800">
 			{habits.map((habit) => {

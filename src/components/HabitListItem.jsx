@@ -18,6 +18,8 @@ export const HabitListItem = ({ habit, setHabits }) => {
 					{actions.map((el) => {
 						return (
 							<ProgressAction
+								// add another key for nested List! took me around one day to get rid of error msg
+								key={el}
 								value={el}
 								habit={habit}
 								setHabits={setHabits}
