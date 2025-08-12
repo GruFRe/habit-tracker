@@ -6,12 +6,17 @@ export const HabitListItem = ({ habit, setHabits }) => {
 	const actions = ["-", "+"];
 	return (
 		<section className="bg-green-400 w-[100%] m-2 mx-4 p-4 ">
-			<span className="block text-center">{habit.text} </span>
+			<span className="block text-center">{habit.habitText} </span>
 			<div className="flex flex-col justify-around">
 				<span className="block text-center">
 					{habit.status} from {habit.times} times per{" "}
 					{habit.timeframe}
 				</span>
+				{habit.times === habit.status ? (
+					<span className="bg-green-950 text-red-400">completed</span>
+				) : (
+					<span>Ongoing</span>
+				)}
 				{/* Container for Navigation Buttons */}
 				<div className="flex justify-around mt-2px">
 					{/* Add buttons here */}

@@ -2,16 +2,16 @@ import { useState } from "react";
 
 // Component to create new Habits
 export const HabitForm = ({ setHabits, habits }) => {
-	// use object as blueprint to pass in state and to reset after submit
-	const habitBlueprint = "";
-	// pass in blueprint wich serves as initial value doenst really work
-	const [newHabit, setNewHabit] = useState({
+	// add blueprint for habit
+	const habitBlueprint = {
 		id: 0,
 		habitText: "",
 		times: 0,
 		timeframe: "week",
 		status: 0,
-	});
+	};
+	// pass in a copy of that blueprint to state to keep track of tbis new copy
+	const [newHabit, setNewHabit] = useState({ ...habitBlueprint });
 	// Function wich gets called onChange
 	const handleOnChange = (e) => {
 		// calls setterFunction
@@ -24,15 +24,20 @@ export const HabitForm = ({ setHabits, habits }) => {
 	};
 	// Function wich gets called on submit
 	const submitForm = (e) => {
-		// prevent default behaviour wich reload page after submitting
 		e.preventDefault();
-		// add current habbit to habitList for easy assinging in the next step
-		const retHabits = [newHabit, ...habits];
-		setHabits(retHabits);
-		// reset newHabit to clear out/ reset inputs
 
-		// const reset = habitBlueprint;
-		// setNewHabit(reset);
+		// calculate ID while Sumbitting
+		const newID = Date.now();
+
+		// create the new habit object with the new ID right away
+		const habitWithID = { ...newHabit, id: newID };
+
+		// add the new habit with the ID to the habits list
+		setHabits([habitWithID, ...habits]);
+
+		// reset newHabit to clear out/ reset inputs
+		const reset = habitBlueprint;
+		setNewHabit(reset);
 	};
 	return (
 		<>
