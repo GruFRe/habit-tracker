@@ -26,6 +26,12 @@ export const HabitForm = ({ setHabits, habits }) => {
 	const submitForm = (e) => {
 		e.preventDefault();
 
+		// additional check to get rid of errors, Gemini
+		if (newHabit.habitText === "" || newHabit.times <= 0) {
+			alert("Bitte fülle alle Felder korrekt aus!");
+			return; // Beende die Funktion, wenn die Validierung fehlschlägt
+		}
+
 		// calculate ID while Sumbitting
 		const newID = Date.now();
 
@@ -35,7 +41,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 		// add the new habit with the ID to the habits list
 		setHabits([habitWithID, ...habits]);
 
-		// reset newHabit to clear out/ reset inputs
+		// reset newHabit to clear out/ reset inputs, pass innBlueprint again
 		const reset = habitBlueprint;
 		setNewHabit(reset);
 	};
@@ -62,7 +68,7 @@ export const HabitForm = ({ setHabits, habits }) => {
 				{/* Section to select timeframe and repetitions */}
 				<section className="flex flex-row justify-evenly mx-2 mb-4">
 					<input
-						type="int"
+						type="number"
 						name="times"
 						id="times"
 						// Link useState and form element with value and onChange

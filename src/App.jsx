@@ -18,13 +18,13 @@ function App() {
 	// 	},
 	// ]);
 
-	// read
+	// read from local Storage
 	const stringifiedHabits = localStorage.getItem("habits");
 	const parsedHabits = JSON.parse(stringifiedHabits);
 	const [habits, setHabits] = useState(parsedHabits ? parsedHabits : []);
 
 	useState(() => {
-		localStorage.setItem("habits", JSON.stringify(habits));
+		localStorage.setItem("habits", JSON.stringify(habits) || []);
 	}, [habits]);
 
 	// add loop to iterate over habits and count for

@@ -1,5 +1,4 @@
 // ProgressAction.jsx
-// Gott verdammte scheiße, 2 Tage für die Buttons "verschwendet"
 // Kind-Komponente, die mit einer Gewohnheit interagiert
 export const ProgressAction = ({ value, habit, setHabits }) => {
 	// Diese Funktion wird aufgerufen, wenn du auf einen Button klickst

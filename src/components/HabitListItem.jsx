@@ -2,6 +2,14 @@ import { ProgressAction } from "./ProgressAction";
 
 // Component wihc represents a single List Item
 export const HabitListItem = ({ habit, setHabits }) => {
+	// // Debugging provided by Gemini
+	// console.log("------------------------");
+	// console.log("Habit:", habit.habitText);
+	// console.log("habit.times:", habit.times, "Typ:", typeof habit.times);
+	// console.log("habit.status:", habit.status, "Typ:", typeof habit.status);
+	// console.log("Ist der Status abgeschlossen?:", habit.times === habit.status);
+	// console.log("------------------------");
+
 	// array with actions to create buttons dynamically
 	const actions = ["-", "+"];
 	return (
