@@ -12,11 +12,17 @@ export const HabitListItem = ({ habit, setHabits }) => {
 					{habit.status} from {habit.times} times per{" "}
 					{habit.timeframe}
 				</span>
-				{habit.times === habit.status ? (
-					<span className="bg-green-950 text-red-400">completed</span>
-				) : (
-					<span>Ongoing</span>
-				)}
+
+				{
+					// still a bug in here 04 !== 4
+					habit.times === habit.status ? (
+						<span className="bg-green-950 text-red-400">
+							completed
+						</span>
+					) : (
+						<span>Ongoing</span>
+					)
+				}
 				{/* Container for Navigation Buttons */}
 				<div className="flex justify-around mt-2px">
 					{/* Add buttons here */}
