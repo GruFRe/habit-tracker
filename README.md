@@ -16,3 +16,5 @@ First project during WBS Coding School utilizing React, State and Effect.
 | FR008 | State Management                 | Implement proper React state management using hooks for habits and goals                                                              | Done                         |
 | FR009 | Local Storage Integration        | Persist habit data using browser’s local storage.                                                                                     | partially done               |
 | FR010 | Responsive Design                | Ensure the application works well on both desktop and mobile devices.                                                                 |
+
+Added deployment via Github Pages with Github Actions during a later chapter in WBS Coding School
