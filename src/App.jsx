@@ -6,6 +6,7 @@ import { HabilList } from "./components/HabitList";
 import { ProgressPreview } from "./components/ProgressPreview";
 
 function App() {
+	// Add coment totest it on Debian/Linux
 	// // useState for Array wich contains different habits, each is an object
 	// const [habits, setHabits] = useState([
 	// 	{ id: 1, habitText: "drink", times: 7, timeframe: "day", status: 0 },
